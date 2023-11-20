@@ -1,2 +1,2 @@
-# mp-nqs
-Implementation for the MP-NQS
+# MP-NQS
+Implementation of the MP-NQS in JAX.
