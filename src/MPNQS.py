@@ -51,8 +51,8 @@ class MPNQS(nn.Module):
         self.k_vec = k_vec
         pw_basis = {}
 
-        pw_basis["orbtials_up"] = PW(k_vec[: self.n_per_spin[0]])
-        pw_basis["orbtials_down"] = PW(k_vec[self.n_per_spin[0] :])
+        pw_basis["orbtials_up"] = PW(k_vec[: self.n_per_spin[0]], N_orbs=self.n_per_spin[0], combine=True)
+        pw_basis["orbtials_down"] = PW(k_vec[self.n_per_spin[0] :], N_orbs=self.n_per_spin[1], combine=True)
         self.orb_basis = pw_basis
 
         self.MPNN = MPNN(
