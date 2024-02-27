@@ -34,5 +34,5 @@ sr = nk.optimizer.SR(diag_shift=0.0001)
 
 log = nk.logging.JsonLog("HEG_14particles_test", save_params_every=7)
 
-gs = nk.VMC(ha, op, sa, variational_state=vs, preconditioner=sr)
+gs = nk.VMC(ha, op, variational_state=vs, preconditioner=sr)
 gs.run(n_iter=150, callback=mycb, out=log)
